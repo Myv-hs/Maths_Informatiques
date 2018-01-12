@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\author{Matthew Coyle}
+\title{Fondement de Mathematiques Informatique}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Calculs ensemblistes, fonctions}
+
+\subsection{ensemble, elements, inclusion:}
+
+
+Soit E un ensemble, et e un element, $e \in E$ signifie que e est un element qui est dans E, et se lit e appartient a E.
+La negation de cette relation, e n'appartiens pas a E se note $e \notin E$.\\
+$\o$ est l'ensemble qui ne contiens auccun element.\\
+
+A et B, deux ensemble. On dit que A est un sous-sensemble de B ou une partie de B, ou encore que A est inclus dans B et on note $A \subseteq B$\\
+sois $\forall x \in A => x \in B$\\
+
+A = B ssi $A \subseteq B$ et $B \subseteq A$ , A et B on les memes elements.\\
+La negation de $A \subseteq B$ s'ecrit $A \not\subseteq B$\\
+
+On note $\mathcal{P}(E)$, l'ensemble des Parties de E ( l'ensemble des sous-ensembles de E, note $2^E$ )
+
+car $card(\mathcal{P}(E)) = 2^{card(E)}$
+
+$E = \{1,3,8,12\}$ $card(\mathcal{P}(E))=2^4$
+
+$\mathcal{P}(E)=\{\o,\{1\},\{3\},\{8\},\{12\},\{1,3\},\{1,8\}, ... , \{1,3,8,12\}\}$\\
+
+A $\subseteq E$ ssi $A \in \mathcal{P}(E)$
+
+
+Remarque: 
+	$\o \in \mathcal{P}(E), E \in \mathcal{P}(E) \forall E$\\
+
+
+Produit Cartesien de 2 ensembles E et F. C'est l'ensemble des couples formes d'un element de E et d'un element de F.\\
+	$E*F = \{(x,y) \mid x \in E$ et $y \in F\}$\\
+\clearpage
+Generalisation:\\
+On generalise le produit cartesien a une famille finie d'ensembles:\\
+$E_1 * E_2 * ... * E_n = \{(x_1,x_2,...,x_n), x1 \in E_1, x_2 \in E_2, ... , x_n \in E_n\}$
+
+$E^n = E * E * E ....$ n fois $n \geq 1$
+
+$E^n$ peut etre defini recusivement
+par 
+
+$$E^1 = E$$
+
+$$E^n = E * E^{n-1}$$\\
+
+
+Remarque:\\
+	D'un point de vue strictement formel, le produit des ensembles n'est pas associatif.\\
+$(E*F)* G \ne E * (F*G)$\\
+$((x,y),z) \in (E*F)*G$ et $(x,(y,z)) \in E*(F*G)$\\
+mais on peut etablir une bijection entre les 2.
+D'une facon generale on n'as pas $E^n * E^m = E^{n+m}$
+
+
+
+\subsection{Reunion, Intersection, difference complementaire, partition}
+
+Referentiel E\\
+Soient A et B deux parties de E, on definit 
+l'intersection de A et B: $A \cap B = \{e \in E \mid e \in A $ et $ e\in B\}$\\
+l'union de A et B: $A \cup B = \{e \in E \mid e \in A$ ou $e\in B\}$\\
+la differance de A et B: $A - B = \{e\in E \mid e\in A$ et $e\notin B\}$\\
+le complementaire de A dans E: $\overline{A}$ ou $A^c  = E\mid \overline{A} = \{e\in E \mid e \notin \overline{A}\}$\\
+la difference symetique de A et B $A \triangle B = (A\setminus B)\cup (B\setminus A)$\\
+On dit que A et B sont disjoints ssi $A\cap B = \o$
+
+\end{document}

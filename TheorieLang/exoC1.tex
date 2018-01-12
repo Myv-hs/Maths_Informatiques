@@ -1,0 +1,30 @@
+\documentclass{article}
+\begin{document}
+\section{}
+A = \{a, ab\}\\
+$ A^0 = \{\epsilon\} $\\
+$ A^1 = \{a,ab\} $\\
+$ A^2 = \{aa,aab,abab,aba\} $\\
+$ A^3 = \{aaa,aaab,aabab,aaba,abaa,abaab,ababab,ababa\} $\\
+$A^* = \{\epsilon,a,aa,ab,aab,...\} $\\
+
+$A^*$ est le langage sur $\sum = \{a,b\}$ contenant l'ensemble des mots commencant par a et ne comportant pas deux b consecutifs.\\
+
+$A^+$ est $A^*$ sans $\{\epsilon\}$\\
+\\
+
+A = \{ab\}\\
+$ A^1 = \{ab\} $\\
+$ A^2 = \{abab\} $\\
+$ A^k = \{(ab)^k\} $\\
+$ A^* = \{(a,b)^n \mid n \in \N\}$\\
+$ A^+ = \{(a,b)^n \mid n \in \N^*\}$\\
+
+
+$A = \{\epsilon, ab\}$\\
+$ A^0 = \{\epsilon\} $\\
+$ A^1 = \{\epsilon,ab,abab\} $\\
+$ A^2 = \{\epsilon,ab,abab,ababab\} $\\
+$ A^k = \{(a,b)^i \mid i \seq k\}$
+$ A^* = \{(a,b)^n \mid n \in \N\} = \{a,b\}^* $\\
+\end{document}
