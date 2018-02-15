@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\begin{document}
+
+Ensembles Denombrables
+
+Le cardinal peut se generaliser a des ensembles non finis tels que les proprietes survants soient verigiess pour deux ensembles E et D quelconques:
+
+$|E| \seq |F| <=> \exists une injection de E vers F$
+$|E| \geq |F| <=> \exists une surjection de E vers F$
+$|E| = |F| <=> \exists une bijection de E vers F$
+
+Un ensemble E est denombrable s'il est en bijection avec $\N$. On note $\omega$ le cardinal de $\N$.
+Une union $\cup_{i \in I} A_i$ est denombrable si I est denombrable.
+Les ensembles denombrables verifient les proprietes suivantes:
+
+-> Toute partie d'un ensemble denombrable est fini et denombrable.
+
+-> Tout produit cartesien fini d'ensemble denombrables est denombrable.
+
+-> Tout union d'ensembles denombrable est denombrable.
+
+
+Remarque: il existe des ensembles non denombrables. Ceci viens de la proposition suivante:
+Prop: Soient E un ensemble et P(E) l'ensemble des parties de E.$|E| < |P(E)|$
+Demonstration par l'absurde qu'il n'existe pas de bijection entre E et P(E). Supposons:
+f : E -> P(E) une bijection.
+$soit A={x \in E | x \not\in f(x)}$
+
+Supposons qu'il existe $a \in E | A=f(a)$
+Si $a \in A$, on en deduit selon la definition de A: $a \not\in A$ Contradiction!
+Si $a \in A$, on arrive aussi a une contradiction. ($a \not\in A et a \in f(a)$)
+Donc a n'admet pas d'antecedant par f. Donc f n'est pas surjective, donc f n'est pas bijective.
+Il n'existe pas d'application bijective de E vers P(E) et $|E| \ne |P(E)|$ le resultat se deduit alors du fait que f: E -> P(E) se definie par f(x) = {x} est injective. $|E| \seq |P(E)|$.
+Donc $|E| \seq |P(E)|$ et $|E| \neq |P(E)|$ donc $|E| < |P(E)|$.
+On en deduit que $P(\N)$ n'est pas denombrable.
+
+
+\end{document}

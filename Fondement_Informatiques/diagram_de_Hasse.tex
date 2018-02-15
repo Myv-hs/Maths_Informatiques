@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\author{me}
+\newtheorem{thm}{Theorem}
+
+\begin{document}
+$
+Def: Soit (E, \leq) un ensemble ordonne, a \leq on associe une relation pred (precedence) par x pred y \leftrightarrow x \leq y et \notexists z t.q. x \leq z \leq y avec x \not=y,x\not=z,z\not=y
+
+Rem: La relation pred peut etre triviale. Par exemple sur les rationnels ordonnes par l'ordre naturel, la relation pred est vide.
+
+Th ordre \rho sur un ensemble fini E est uniquement determine par la relation de precedence associes.
+Plus precisemment \rho = pred* (fermeture, transitive, reflexive de pred)
+
+Calcul:
+On suppose que l'on represente une relation d'ordre R par une matrice binaire t.q. 
+
+R(i,j) = \begin{cases} 1 si iRj \\ 0 sinon \end{cases}
+
+On va se poser le pbe de trouver les sucesseurs immediats des elements de E. cad Comment trouver la matrice H de la relation R t.q. H definie par xHy ssi y est un successeur immediat de x
+
+\begin{thm}Si S designe le carre de R vue comme une matrice positive a coef \in \N, on a:
+
+H(i,j)=\begin{cases} 1 si S(i,j) = 2 \\ 0 sinon \end{cases}
+
+On appelle 1,2,3,...,n les elements de E
+on a S = R^2 = R.R
+S_{i,j} = R_{1i}R_{1j} + R_{2i}R_{2j}+ ... + R_{ni}R_{nj}
+
+S_{i,j} = 2 \rightarrow j successeur immediat de i.
+
+\end{thm}
+
+Mathode pour construire le diagramme de Hasse.
+1) Determiner R la matricec de la relation d'ordre
+2) Calcucler S = R^2 en considerant R comme une matrice positive.
+3) A chaque fois que S(i,j)=2 dessiner une fleche de i a j.
+
+
+Ex: sur (\N_5, R)
+R = \{1\leq1,1\leq2,1\leq3,1\leq4,1\leq5,2\leq2,2\leq3,2\leq4,2\leq5,3\leq3,4\leq4,5\leq5\}
+
+Matrice 1a
+\begin{tabular}{ c c c c c c}
+ &1&2&3&4&5 \\ 
+1&1&1&1&1&1 \\  
+2&0&1&1&1&1 \\
+3&0&0&1&0&0 \\
+4&0&0&0&1&0 \\
+5&0&0&0&0&1
+\end{tabular}
+
+Matrice 1b
+\begin{tabular}{ c c c c c c}
+ &1&2&3&4&5 \\ 
+1&1&1&1&1&1 \\  
+2&0&1&1&1&1 \\
+3&0&0&1&0&0 \\
+4&0&0&0&1&0 \\
+5&0&0&0&0&1
+\end{tabular}
+
+Matrice 2a
+\begin{tabular}{ c c c c c c}
+S&1&2&3&4&5 \\ 
+1&1&2&3&3&3 \\  
+2&0&1&2&2&2 \\
+3&0&0&1&0&0 \\
+4&0&0&0&1&0 \\
+5&0&0&0&0&1
+\end{tabular}
+
+Matrice 2b
+\begin{tabular}{ c c c c c c}
+&1&2&3&4&5 \\ 
+1&0&1&0&0&0 \\  
+2&0&0&1&1&1 \\
+3&0&0&0&0&0 \\
+4&0&0&0&0&0 \\
+5&0&0&0&0&0
+\end{tabular}
+
+
+$
+\end{document}

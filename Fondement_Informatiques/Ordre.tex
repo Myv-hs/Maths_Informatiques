@@ -1,0 +1,252 @@
+\documentclass{article}
+
+\author{me}
+
+\begin{document}
+
+Def Une relation d'odre large est une relation reflexive, anti-seymetrique, transitive.
+Une relation d'ordre strict est une relation irreflexive, anti-symetrique, transitive.
+
+Si R est une relation d'ordre strict sur E, alors la relation R U IDe est une relation d'ordre large sur E.
+
+Reciproquement, si R' est une ordre large sur E, alors R' \ IDe est une relation d'odre strict sur E
+
+notation ordre large \leq stric <
+
+on passe d'une ordre large a un ordre strict par les equivalences.
+
+x < y \iff x \leq y et x != y
+x \leq y \iff x<y et x=y
+
+Ordres totaux, partiels.
+Si R relation d'ordre verifie \forall e, e' \in E, e!=e' \rightarrow (eRe') ou (e'Re), on dit que R est im ordre total. Sinon R est un ordre partiel.
+
+EX:
+
+Ordre naturel sur les Reels est un ordre total.
+
+La divisibilite sur les entiers naturels.
+	a \leq_div b ssi \exists c t.q. b = ac
+
+	6 \leq_div 12, 6 !\leq_div 15
+
+L'inclusion sur P(E) est un ordre partiel
+
+
+Pre-ordre: Une relation de preordre est une relation transitive.
+
+Ensemble Ordonne, Un ensembke ordonne (E, \leq) est une ensemble muni d'une relation d'ordre.
+
+Application monotones.
+
+Def: Soient (E_1, S_1) et (E_2, S_2) deux ensembles ordonnes.
+Une application f de E_1 dans E_2 est dite monotonne ssi:
+\forall x,y \in E_1, x\leq_1 y \rightarrow f(x) \leq_2 f(y)
+On parle d'homomorphisme de l'enemble ordonne (E_1, \leq_1) dans l'ensemble ordonne (E_2, \leq_2).
+On dira que (E_1, \leq_1) et (E_2, \leq_2) sont isomorphes s'il existe une bijectionb entre E_1 et E_2 t.1. b et b^-1 soient monotones.
+
+Ex: si deux ensembles ordonnes (E_1, S_1) et (E_2, S_1) on le meme support, E_1 == E_2
+l'inclusion de \leq_1 dans \leq_2, \leq_1 \subseteq \leq_2, c-a-d \forall x,y x\leq_1 y \rightarrow x \leq_2 y
+reviens a dire que l'application Id de (E_1, \leq_1) dans (E_2, \leq_2) est monotonne.
+
+Remarque: Il ne suffit pas qu'une bijection soit monotonne pour qu'elle soit un isomorphisme. 
+par exemple l'application Id de (\N, \leq_div) dans (\N,\leq) est une bijection monotonne mais par un isomorphisme (la reciproque n'est pas monotonne).
+
+
+Ensembles totalement ordonnes
+
+Un ensemble ordonne (E, \leq) est totalement ordonne si \leq est une ordre total.
+i.e. ssi \forall x,y \in E, x!=y \rightarrow x\leqy or y\leqx
+Il est partiellement ordonne si \exists x,y, \in E t.q. x!=y, x!\leqy et y!\leqx
+
+Soit (E, \leq) un ensemble partiellement ordonne, une extention lineaire de (E,\leq) est une ensemble totalement ordonne (E,\leq_t) de meme support et t.q. \leq \subseteq \leq_t
+
+(Tri topologique)
+
+Theoreme:
+Soit (E, \leq) un ensemble ordonne, il a aumoins une extention lineaire et \leq est egale a l'intersection de toutes ces extentions lineaires.
+Ex(fig)
+
+Algo: On choisit un element sans predecesseur, on l'enleve et on le place en tete de liste, et on recommance.
+
+Produit d'ensemble ordonne:
+Soient (E_1, \leq_1), (E_2,\leq_2), le produit direct de ces deux ensembles ordonnes est (E_1 x E_2, \leq) avec la relation \leq definie par: (x_1, x_2) \leq (y_1,y_2) ssi x_1 \leq_1 y_1 et x_2 \leq_2 y_2
+Remarque: L'ordre sur le produit direct est aussi appele ordre produit.
+
+Le produit lexicographique de (E_1, \leq_1) et (E_2, \leq_2) est (E_1 x E_2, \leq) avec (x_1, x_2) \leq (y_1, y_2) ssi (x_1 \leq y_1 ou x_1 = y_1 et x_2 \leq y_2)
+
+sous-ensembles ordonnes, chaines, anti-chaines
+
+Soit (E,\leq) un ensemble ordonne,  Un sous-ensemble ordonne, (E', \leq') de (E,\leq) est t.q. E' \subseteq E et \leq' = \leq \cap (E' x E')
+c-a-d \forall x,y \in E' x\leq'y sii x \leq y
+Une chaine de E est un sous-ensemble totalement ordonne de E.
+Une chaine est maximale si elle n'est pas strictement incluse dans une autre chaine.
+Une anti-chaine E' de E est un sous-ensemble de E t.q.: \leq \cap (E' x E') = Id_{E'} <(-.-)
+
+Une anti-chaine est maximale si elle n'est pas strictement incluse dans une autre anti-chaine
+
+
+Majorants, minorants.
+Def: Soir E' une partie d'un ensemble ordonne (E,\leq) un element x de E est un majorant (resp minorant) de E' si \forall y \in E', y \leq x (resp x \leq y)
+
+Prop: Maj(E') \cap E' et Min(E') \cap (E') ont chacun au plus un element.
+Si Maj(E') \cap E' != \o , l'unique element de cet ensemble est appele le maximum de E' (le plus grand element de E')
+Si Min(E') \cap E' != \o , l'unique element de cet ensemble est appele le minimum de E' (le plus petit element de E')
+
+
+Prop: Soit E' une partie de E et z \in E, les 3 conditions suviantes sont equivalents.
+(1) z est le max de E'
+(2) z \in E' et \forall x \in E' x \leq z
+(3) z \in E' et z est le minimum de Maj(E')
+
+Soit E' une partie de E. Un element x de E' est dit maximal dans E' si \forall y \in E' Y >= x \rightarrow y=x. Si E' a un element maximum, alors c'est son unique maximal.
+
+Def. Un element x \in E est la borne superieur d'une partie E' de l'ensemble E ordonne
+ssi: (\forall y \in E', y \leq x) et (\forall z \in E, ((\forall y \in E', y \leq z)\rightarrow x \leq z))
+
+x est le plus petit des majorants de E' = brone superieur de E'
+
+Def: Un element x \in E est la borne inferieur d'une partie E' de l'ensemble E ordonne
+ssi: (\forall y \in E', x \leq y ) et (\forall z \in E, ((\forall y \in E', z \leq y)\rightarrow z \leq x))
+x est le plus grand des minorants de E' la borne inf de E'
+
+On note sup(E') et inf(E') les bornes superieurs et inferieurs de E' si elles existent
+
+Prop soit E' \subseteq E
+(1) Si z est le max de E', alors z = sup(E')
+(2) Si sup(E') \in E, alors sup(E') est le maximum de E'
+
+Ex \N ordonne par la divisibilite, (\N, \leq_{div})
+Pour cet ordre, la borne inferieure d'un ensemble de 2 entiers existe toujours et elle est le PGCD
+Pour cet ordre, la borne superieur d'un ensemble de 2 entiers existe toujours et elle est le PPCM (plus petit commun multiple)
+
+Rem: les bornes superieurs et inferieurs n'existent pas toujours.
+Ex E = \{a,b,c,d\} ordonne par \{a \leq c, a \leq d, b \leq c, b \leq d \}
+\{a,b\} n'as ni bornes superieurs ni bornes inferieurs, pareil pour \{c,d\}
+
+Prop: Soit {E_i}_{i\in I}, une famille de parties d'un ensemble ordonne (E, \leq) e E' = \cup_{i\in I} E_i
+Si chaque ensemble E_i admet une borne superieur (resp. inferieur) e_i
+et si l'ensemble \{e_i, i \in I\} admet une borne superieur (resp. inferieur) e
+
+alors e est ka borne superieur (resp. inferieur) de E'
+
+
+
+Ensemble bien fonde et Induction
+Def: Une relation d'ordre \leq sur un ensemble E est bien fondee s'il n'y a pas de suite infinie strictement decroissante sur E.
+Un bon ordre est un ordre total bien fonde.
+
+Un ensemble ordonne (E, \leq) est bien fonde ssi toute partie non vide de E admet au moins un element mimnimal.
+
+Principe d'induction sur les ensemblse bien fondes
+th: Soit \leq un ordre bien fonde sur E et P une proposition sur un element x de E
+si la propriete (I) suivant est verifiee (I) \forall x \in E, ((\forall y < x, P(y))\rightarrow P(x))
+
+alors \forall x \in E, P(x)
+
+
+
+Treillis
+Def: Un ensemble ordonne (E, \leq) est un Treillis si toute paire d'elements admet une borne superieur et une borne inferieur
+On note x \sqcup y au lieu de sup(\{x,y\})
+on note x \sqcap y au lieu de inf(\{x,y\})
+
+Ex: (\N, \leq_{div}) est un treillis.
+les operation binaires 
+\sqcup ppcm
+\sqcap pgcd
+\bot 1 T 0
+
+
+Si E est un Treillis on peut considerer que E est muni de 2 operations binaires \sqcup et \sqcap
+
+
+Proprietes de \sqcap \sqcup
+- deupotence x \sqcup x = x et x \sqcap x = x
+- commutativite x \sqcup y = y \sqcup x et x \sqcap y = y \sqcap x
+- associativite (x\sqcup y)\sqcup z = x \sqcup (y\sqcup z) et (x\sqcap y)\sqcap z = x \sqcap (y\sqcap z)
+- absoption x \sqcap (x\sqcup y) = x et x \sqcup (x\sqcap y) = x
+
+Reciproquement, si sur un ensemble E, 2 operations binaires ont es 4 proprietes precedents.
+On peut ordonner E de facon a ce que x \sqcup y et x \sqcap y soient respectivement la borne superieur et la borne inferieur de x et y
+Il suffit de poser x \leq y ssi x\sqcup y =y, ce qui a cause de la propriete d'absorption est equivalent a x \sqcap y = x
+
+x \sqcup y = y \rightarrow x \sqcap (x \sqcup y) = x \sqcap y \rightarrow x = x \sqcap y
+
+Toute partie finie non-vide d'un treillis a une borne superieur et une borne inferieur
+
+
+Prop: les deux operations \sqcap et \sqcup sont monotones.
+i.e.: 	si x \leq x' et y \leq y'
+		alors x \sqcup u \leq x' \sqcup y'
+			et x \sqcap u \leq x' \sqcap y'
+
+Def un Terillis est distributif si \sqcap et \sqcup distribuent l'une par rapport a l'autre.
+i.e.: si 
+1) \forall x,y,z x \sqcup(y \sqcap z) = (x \sqcup y) \sqcap (x \sqcup z)
+2) \forall x,y,z x \sqcap(y \sqcup z) = (x \sqcap y) \sqcup (x \sqcap z)
+Prop: 1) et 2) sont equivalents
+
+Def: Un treilis est dit complemente si
+1) il a un elements minimum \bot et un element maximum \top distincts (\bot \not= \top)
+2) \exists une application \mu de E dans E (\mu.E -> E) t.q.:
+\forall x \in E x \sqcap \mu(x) = \bot
+\forall x \in E x \sqcup \mu(x) = \top
+
+Ex: le treillis P(E) est complemente
+1) \bot = \o \top = E
+2) l'application \mu est l'operation habituelle de complement
+
+\forall A \in P(E), A \subseteq E, A \sqcap \mu(A) = \o
+A \sqcup \mu(A) = E
+A \sqcap \overline{A} = \o
+A \sqcup \overline{A} = E
+
+
+Proposition: Si un Treillis complemente est distributif il n'existe qu'une seule operation de complementation \mu
+Cette operation posede en plus les prop suivantes.
+Elle est involuptible \forall x \mu(\mu(x))=x
+Elle verifie les lois de Morgan:
+\forall x,y \mu(x \sqcup y) = \mu(x) \sqcap \mu(y)
+		et  \mu(x \sqcap y) = \mu(x) \sqcup \mu(y)
+x \leq y \leftrightarrow \mu(y) \leq \mu(x)
+
+Ex: le treillis E = \{a,b,c,\bot,\top\}
+fig 
+
+Il a (au moins) 2 operations de complemtation \mu et \Mu
+par ex: \mu(\top)=\bot, \mu(\bot)=\top
+\mu(a)=b, \mu(b)=c, \mu(c)=a
+\Mu(\top)=\bot, \Mu(\bot)=\top, \mu(a)=c, \mu(b)=a, \mu(c)=b
+
+
+Treillis complet et fonctions continues:
+
+Def: Un ensemble ordonne (E, \leq) est appele un treillis complet si toute partie de E admet une borne superieur et une borne inferieur
+
+Ex: (P(E), \subseteq) est un treillis complet. 
+Sup({E_i}_{i \in I}) = \cup_{i \in I} E_i.
+Inf({E_i}_{i \in I}) = \cap_{i \in I} E_i.
+
+Si E est un treillis complet, la borne inferieure de E est majoree par tous les elements de E = un treillis complet comporte donc un element minimum note \bot
+\bot = Inf(E)
+idem pour born sup: \top
+Sup(E) = \top
+
+Si E est un treillis complet, \o a une borne sup et comme Maj(\o)=E, Sup(\o) = \bot
+On a donc Inf(E) = Sup(\o)=\bot
+et Inf(\o) = Sup(E) = \top
+
+Def : Une application f d'un ensemble ordonne (E_1, \leq_1) dans un ensemble ordonne (E_2, \leq_2) est dite continue (sup_continue) si elle preserve les bornes superieurs des parties non vides.
+Si la partie E' \not= \o a une borne superieur e = sup(E') alors f(E') = \{f(x) t.q. x \in E'\} a aussi une borne superieur qui est egale a f(e)
+Sup(f(E'))=f(sup(E'))
+
+Rem: Puisque dans un treillis complet, les bornes sup existent toujours, la continuite d'une application s'exprime alors par:
+	f(sup(E))=sup(f(E))
+
+Prop: tout fonction continue est monotone
+soient x,y \in E_1 t.q. x \leq y
+alors sup(\{x,y\}) = y et la continuite de f implique que sup(\{f(x),f(y)\}) = f(sup(\{x,y\}))=f(y), et donc f(x) \leq f(y)
+
+
+\end{document}

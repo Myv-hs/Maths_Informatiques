@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\author{Matthew Coyle}
+\title{Fondement de Mathematiques Informatique}
+
+\begin{document}
+Une Operation $\phi$ sur un ensemble E, est une application $\phi$: $E^n -> E$.
+$\phi$ est d'arite n, le rang de $\phi$ est n, $\phi$ est une operation n-aire.
+$a(\phi)=n$
+
+Operation binaires. Une operation binaire est une loi de composition interne *. Sur un ensemble E est une application $*:ExE=>E$
+l'image d'un couple (x,y) par * est note n*y.
+
+Props:
+* est associative ssi $\forall a,b,c \in E$ a*(b*c) = (a*b)*c
+* est commutatuve ssi $\forall a,b \in E$ a*b = b*a
+* admet un element neutre 1 ssi $\forall e \in E$ e*1=1*e=e
+
+Def: Un ensemble muni d'une operation * associative est un semi-group. De plus si E posede un element neutre e pour *, alors (E,*,e) est un monoide. Si * est commutative, le semi-groupe (resp. le monoide) est commutatif.
+
+Exemple: (P(E),$\cap$) est un monoid commutatif
+(P(E),$\cup$) est un monoid commutatif
+
+Soit A un ensemble fini appele alphabet et dont les elements sont appelees lettres, le monoide libre sur A note $A^*$ est l'ensemble des mots ecrits sur A.
+Un mot u: suite fini de lettres.
+|u|:longeur du mot.
+|$\varepsilon$| le mot vide.
+
+La loi de composition: la concatenation de deux mots:
+$u=u_1u_2...u_n$ et $v=v_1v_2...v_n$ $u.v=u_1u_2...u_nv_1v_2...v_n$
+
+Remarque: $\ne$ entre les suites et les mots d'une langage.
+les elements d'un mot appartiennent a un ensemble fini, alors que les elements d'une suite appartienne a un ensemble infini (peuvent.)
+Les mots on toujours une longeur finie pas les suites.
+$\varepsilon$ mot qui ne contient aucun element.
+
+Difinition recursive d'une mot:
+Soit $\sum$ un alphabet, $\omega \in \sum^*$ si:
+	$\omega = \varepsilon$
+	$\omega = x.u, x \in \sum et u \in \sum^*$
+
+$E_1 = {u \in {a,b}^* | |u|=5 }$
+
+Un ensemble E muni d'une operation * est un group si c'est un monoide et que tout elements admet un inverse:
+$\forall e \in E, \exists e' \in E | e*e'=e'*e=1$
+
+Si * est commutative, le group est commutatif
+
+Ex: \Z muni de l'addition est un group commutatif.
+
+
+
+
+
+Relations.
+
+Def: Une relation sur un ensemble E est la donne d'une partie de R de ExE.
+Une paire (e,e') de ExE est dans R. eRe', (e,e')$\in$ R, R(e,e')
+
+Ex: ${(n,m)|n \seq m}$
+${(n,m)|n \seq m \seq 2n}$
+
+Operation ensemblists sur les relations.
+
+le complementaire R d'une relation R dans $E^2$
+
+$(e,e') \in R <=> (e,e') \in R_1 ou (e,e') \in R_2$
+
+
+l'Union:
+$(e,e') \in R_1 \cup R_2 <=> (e,e') \in R_1 ou (e,e') \in R_2 $
+
+l'Union:
+$(e,e') \in R_1 \cap R_2 <=> (e,e') \in R_1 et (e,e') \in R_2 $
+
+la relation vide:
+$ \forall e,e' \in E, (e,e') \not\in \o_E $
+
+la relation pleine:
+$ \forall e,e' \in E, (e,e') \in \pi_E $
+
+la relation vide:
+$ \forall e,e' \in E, (e,e') \in Id_E <=> e = e' $
+
+
+Relation binaire sur E,
+relation inverse:
+$ eR^-1e' <=> e'Re $
+
+Produit de deux relation binaires $R_1R_2$
+$ e(R_1.R_2)e' <=> \exists e'' | (eR_1e'') et (e''R_2e') $
+produit assiciatif et a $Id_E$ comme element neutre.
+
+$ R^* = Id_E \cup R \cup (R.R) \cup (R.R.R) \cup ... $
+
+$ \cup_{i\geq0} avec R^0 = Id_E$
+$R^{1+1} = R.R^i$
+
+
+$R^+ = \cup_{i>0} R'$
+
+donc $R^* = ID_E \cup R^+$
+$ \forall i, j \geq 0 R^{i+j}=R^i.R^j $
+
+
+//////////YASMINA\\\\\\\\\\\\
+
+
+Relation d'equivalance
+
+Une relation d'equivalance est une relation reflective symetrique, transitive.
+L'egalite sur un ensemble E est une relation d'equivalance.
+L'intersection $R \cap R'$ de 2 relations d'equivalance est une relation d'quivalence. Mais pas necessairement $ R \cup R' $ ni R.R'
+
+Def: R relation d'quivalence sur E. e element de E
+
+$ {e' \in E | eRe'} = [e]_R est la classe d'equivalancec de e. $
+
+Prop.
+$ \forall e \in E, e \in [e]_R $
+$ \forall e \in E, eRe' => [e]_R = [e']_R$
+$ [e]_R \cap [e']_R \ne \o => [e]_R= [e']_R $
+
+$ {[e]_R | e \in E} $ ensemble de partie de E est appele ensemble quotient de R par R, E/R est une partition de E.
+Reciproquement.
+
+
+Congruence.
+
+Def Une relation d'equivalance R definie sur un ensemble E muni d'une loi de composition interne * est une congruence.
+Si elle est compatible avec la loi *
+c.a.d si:
+$ \forall e, e', d, d' \in E (eRe') et (dRd') \rightarrow ((e*d)R(e'*d'))$
+
+Si R est une congruence sur E muni de *, la loi passe au quotient c'est a dire que E/R est muni d'une loi [*]
+en posant e[*]e'=[e*e'] et [*] est bien definie (ne depens pas de representants choisis).
+
+
+Prop: Soit R une congruence sur un monoide (resp group)(E,*)
+
+E/R muni de la loi [*] est un monoide (resp group).
+
+
+\end{document}
