@@ -1,0 +1,86 @@
+Exo01
+(B) \varepsilon
+Le cas de base est le mot vide avec autant de parenthese ouvrantes et fermantes.
+(I)
+
+(I) f(\varspsilon)=0
+(B) 
+
+g(x): nbr de parentheses gauche dans x \in D
+d(x): nbr de parentheses droite dans x \in D
+On veut montere P(x): g(x)=d(x), x \in D
+(B) L'unique element du cas de base de la definition inductive du langage de Dyck est \varepsilon qui satisfait P puisque d(\varepsilon)=g(\varepsilon)=0
+
+(I) soient x,y \in D. Supposons P(x) et P(y), d(x)=g(x) et d(y)=g(y).
+Soit z \in D, z = xy
+On a d(z)=d(x)+d(y), g(z)=g(x)+g(y)
+Comme P(x) et P(y) alors d(z)=g(z) donc P(z)
+
+Soit z \in D, z = (x)
+On a d(z) = d(x)+1, g(z)=g(x)+1
+Comme P(x) alors d(z)=g(z) donc P(z)
+
+
+Exo02
+1
+(B) \o \in AB ((2^0)-1=0)
+(I) \forall x=<a,g,d>, a \in A, g,d \in AB
+on a n(x)=1+n(g)+n(d), on suppose P(g),P(d)
+\leq 2^{h(g)}+2^{h(d)}-1
+\leq 2*2^{max(h(g),h(d))}-1
+\leq 2^{h(x)}-1
+
+2
+(B) \o \in AB (2^(0-1))
+	<a,\o,\o> \in AB (2^(1-1))=1
+(I)	x=<a,g,d>, a \in A, g,d \in AB
+On a f(x)=f(g)+f(d), on suppose Q(g) et Q(d)
+\leq 2^{h(g)-1}+2^{h(d)-1}
+\leq 2*2^{max(h(g),h(d))-1}
+\leq 2^{h(x)-1}
+
+
+Exo04
+(B) <a,\o,\o> \in ABS
+(I) g,d \in ABS \rightarrow <a,g,d> \in ABS
+
+(B) x=<a,\o,\o> \in ABS, qui satisfait P(x) 
+	n(x)=1, (f(x)=1) 2f(x)-1=1
+(I) g,d \in ABS On supose P(g), P(d)
+	n(<a,g,d>) = n(g)+n(d)+1
+	n(<a,g,d>) = 2f(g)+2f(d)-1
+	n(<a,g,d>) = 2(f(g)+f(d))-1
+	n(<a,g,d>) = 2f(<a,g,d>)-1
+
+Exo03
+(AB_n) n \in \N
+AB_0 = \{\o\}
+AB_{n+1} = AB_n \cup \{<a,g,d> | a \in A, g,d \in AB_n\}
+Montrer que \big\cup_{n\in \N} AB_n = AB
+
+\big\cup_{n\in \N} \subseteq AB
+Montrer par recurance sur n
+P(n): (AB_n) \subseteq AB
+
+(B) AB_0 = {\o} \in AB
+	donc AB_0 \subseteq AB
+
+(I) soit n \in \N, P(n) vrai
+	soitent A \in A, g,d \in AB_n
+	Par hypothese de recurrence AB_n \subseteq AB
+
+	En appliquant l;etape inductive de AB, sur a,g,d on obtient <a,g,d> \in AB
+	Donc
+		\{<a,g,d> | a\in A, g,d \in AB_n \} \subseteq AB
+	Donc
+		AB_{n+1} \subseteq AB
+	Par consequent \big\cup_{n\in \N} AB_n \subseteq AB
+
+Reciproquement pour montrer AB \subseteq \big\cup_{n\in \N} AB_n il suffit de montrer que \big\cup_{n\in \N} AB_n verifie les conditions (B) et (I) de ka definition de AB
+
+(B) \o \in AB, \o \in AB_0 \subseteq \big\cup_{n\in \N} AB_n
+(I) Soient g,d \in \big\cup_{n\in \N} AB_n, Il existe n et m tels que g \in AB_n et d \in AB_n
+Par symetriq on peut supposer m \leq n Puisque AB_m \subseteq AB_n, on en deduit que g,d \in AB_n
+et donc \forall a \in A, <a,g,d> \in AB_{n+1} avec AB_{n+1} \subseteq \big\cup_{n\in \N} AB_n
+
+On a prouve' AB = \big\cup_{n\in \N} AB_n

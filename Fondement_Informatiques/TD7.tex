@@ -1,0 +1,54 @@
+Exo01
+definition inductive de \N
+(B) 0 \in \N
+(I) n \in \N \rightarrow n+1 \in \N
+
+
+definition de Dyck D \sebseteq A*, A\{(,)\}
+(B) \varepsilon \in D
+(I) 	u \in D \rightarrow (u) \in D
+		u,v \in D \rightarrow uv \in D
+
+(B) \o \in AB
+(I) g,d \in AB \rightarrow \forall a \in A, <a,g,d> \in AB
+
+Exo02
+ABS
+(B) <a,\o,\o> \in ABS
+(I) g,d \in ABS \rightarrow <a,g,d> \in ABS
+
+AB
+(B) \o \in AB
+(I) \forall a \in A, g,d \in AB 
+	\rightarrow <a,g,d> \in AB;
+
+Exo04
+n = nombre de noeuds
+f = nombre de feuilles
+h = hauteur de l'arbre
+
+n:
+(B) n(x)=0 si x=\o
+(I) <a,g,d> \in AB, a \in A, g,d \in AB 		\rightarrow n(<a,g,d>) = 1 + n(g) + n(d)
+
+f:
+(B) f(x)=0 si x=\o
+	f(x)=1 si x=<a,\o,\o>
+(I) <a,g,d> \in AB, a \in A, g,d \in AB,
+	\rightarrow f(<a,g,d>)=f(g)+(d) avec g,d \ne \o
+
+h:
+(B) h(x)=0 si x=\o
+(I) <a,g,d> \in AB, a \in A, g,d \in AB,
+	\rightarrow h(<a,g,d>)= 1 + max(h(g),h(d))
+
+Exo03
+(B) \o \in AVL
+(I) \forall a \in A, g,d \in AVL, 
+	|h(g)-h(d)|<=1 
+	\rightarrow <a,g,d> \in AVL;
+
+
+Exo06
+(B) \varepsilon si u = \varepsilon
+(I) wa si u = aw
