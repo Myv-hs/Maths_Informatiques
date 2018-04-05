@@ -1,0 +1,14 @@
+\sigma = \{a,b,c,d\}, 
+M = ababbabcab
+T = ababaababbabcabbabb
+
+pour chaque a \in \sigma
+	der_occ[a] = -1
+pour i=0 a m-2 faire
+	der_occ[M[i]] = i
+
+der_occ = \{8,6,7,-1\}	
+
+                 a b a b b a b c a b
+decalage_bs = [8,8,8,8,8,8,8,8,3,3,1]
+              -1 0 1 2 3 . . .

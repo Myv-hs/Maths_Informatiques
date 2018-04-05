@@ -1,0 +1,23 @@
+\documentclass{article}
+
+\author{Matthew Coyle}
+\title{Theorie des Langages}
+
+\begin{document}
+
+Mots sur {a,b,c} qui commencent par b
+$$b.(a|b|c)^*$$
+
+Mots sur {a,b,c} qui contiennet exactement 2 a
+$$(b|c)^*.a.(b|c)^*.a.(b|c)^*$$
+
+Mots sur {a,b,c} qui contiennent aumoints 2 a
+$$(b|c)^*.a.(b|c)^*.a.(a|b|c)^*$$
+
+Mots sur {a,b,c} qui contiennent au plus 2 a
+$$(b|c)^*.(a|\varepsilon).(b|c)^*.(a|\varepsilon).(b|c)^*$$
+
+Mots sur {a,b,c} qui contiennent pas ab
+$$((a^+.c)|b|c)^*a^*$$
+
+\end{document}

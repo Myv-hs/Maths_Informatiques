@@ -1,0 +1,17 @@
+M = "aaaba"
+
+plbord(1) = 0 car plboard(a)= 		epsilon
+plbord(2) = 1 car plboard(aa)= 		a
+plbord(3) = 2 car plboard(aaa)= 	aa
+plbord(1) = 0 car plboard(aaab)= 	epsilon
+plbord(5) = 1 car plboard(aaaba)= 	a
+
+plbord = [0|1|2|0|1]
+
+T = 	"aaaaabaaababba"
+		0123
+		   23
+		    2345
+		       12345
+		           1
+		           0001

@@ -1,0 +1,50 @@
+1
+1.1	
+	ltr= 34
+	rtl= 24
+1.2 
+	O(nm) |motif|=n, |text|=m
+
+2
+2.1
+	sur feuille
+2.2
+	O(n) n=longueur de text
+2.3 
+	i	Mi 			a 		b
+	0	\varepsilon	a 		\varepsilon
+	1 	a 			a 		ab
+	2 	ab 			aba 	\varepsilon
+	3 	aba 		a 		abab
+	4 	abab 		aba 	ababb
+	5 	ababb 		a 		\varepsilon
+
+	O(n^3|\sigma|)
+2.4
+	M = ababb
+	M_0 = \varepsilon
+	M_1 = a  		plbord(1) = \varepsilon
+	M_2 = ab 		plbord(2) = \varepsilon
+	M_3 = aba 		plbord(3) = a
+	M_4 = abab 		plbord(4) = ab
+	M_5 = ababb 	plbord(5) = \varepsilon
+
+2.5, 2.6
+	sur feuille
+
+2.7
+	
+
+
+
+(Parenthese)
+Calcule de S(i,x)
+Si i =0 et M[i]!= x Alors
+	retourner 0
+Si i=m Alors
+	i == plbord(i)
+Tant que i > 0 et M[i]!=x
+	i == plbord(i)
+Si M[i]=x
+	retourner i+1
+sinon retourner 0

@@ -1,0 +1,8 @@
+plbord[1] <- 0
+i <- 0
+POUR k <- 2 a m FAIRE
+	TANT QUE i > 0 ET M[k-1] != M[i] Faire 
+		i <- plbord[i]
+	SI M[i]=M[k-1] ALORS
+		i <- i+1
+	plboard[k] <- i
