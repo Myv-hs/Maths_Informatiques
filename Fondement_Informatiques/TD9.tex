@@ -1,0 +1,57 @@
+Exo1
+F_0 = \{a,b\}, F_1=\{r\}, F_2=\{s\} et F = F_0 \cup F_1 \cup F_2
+
+F = \{a,b,r(a),r(b),s(a,b),s(r(a),r(b)), s(s(a,b),s(a,b)), s(b,a), s(r(a),b), ...\}
+
+Exo2
+2.1
+(B) x=\varepsilon, g(\varepsilon, y) = y \rightarrow Q(x) vrais pour la base.
+x \in L
+
+2.1 cor
+Q(x): "\forall y, g(x,y) est defini" x,y \in L
+Montrons par induction sur x que Q(x) vrai \forall x \in L
+
+(B) \varepsilon \in L, Q(\varepsilon): "\forall y, g(\varepsilon,y) est defini" est vrais car g(\varepsilon, y) = y defini.
+(I) \forall l \in L, Q(l) vrais, g(l) est defini \forall y \in L
+Soit a \in L, g((al),y)=g(l,(ay)) \rightarrow defini
+Donc \forall x \in L, \forall y \in L, g(x,y) defini
+
+2.2
+g((a_1),y) = a_1y
+
+2.3
+n=1 ok
+n >= 2 :
+Supposons que pour n > 1 l'egalite vraie
+g((a_n(a_{n-1}(...(a_1)...))),y) = g(\varepsilon, (a_1(...(a_{n-1}(a_n))...))
+Montrons que c'est vrai pour n+1
+g((a_{n+1}(a_n(a_{n-1}(...(a_1)...)))),y) = g((a_n(a_{n-1}(...(a_1)...))),a_{n+1}y)
+										  = g(\varepsilon, (a_1(...(a_{n-1}(a_n))...)a_{n+1}y)
+
+2.4
+rev(x) = g(x,\varepsilon)
+rev((a_n(a_{n-1}(...(a_1)...)))) = g((a_n(a_{n-1}(...(a_1)...))),\varepsilon)
+								 = (\varepsilon, (a_1(...(a_{n-1}(a_n))...)a_{n+1}y)
+								 = a_1(a_2(...(a_n)...))
+
+
+Exo3
+3.1
+(B) \forall x,y x<y x\%y = x
+(I) \forall x,y x>y x\%y = (x-y)\%y
+
+
+3.1 brouillon
+modulo(n,m)
+	if(n>=m) return modulo(n-m,m)
+	return n
+
+modulo(n,m)
+	if(n<m) return n
+	return modulo(n-m,m)
+
+3.2
+\N x \N* coincide avec la partie X de \N x \N defini par
+(B) \forall x \in \N, \forall y \in \N* x<y, (x,y) \in X
+(I) (x,y) \in X \rightarrow (x+y,y) \in X

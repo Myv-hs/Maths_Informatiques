@@ -1,0 +1,81 @@
+\documentclass{article}
+\begin{document}
+
+Ensembles definis inducivement (recursivement).
+
+De facon intuitive, la definition inductive d'une partie X d'un ensemble consiste en la donnee de certains elements de X, et en des moyens de construire des nouveaux elements dans X a' partir d'elements deja connus.
+
+Une telle difinition presentatera donc de maniere generique:
+	(B) certains elements de X donnees explicitements (base de la recursivite)
+	(I) les autres elements de X soit definis en fonction d'elements appartenant deja a X (etape inductive de la definition recursive)
+
+	0 \in \N_even
+	si a \in \N_even alors a+2 \in \N_even
+
+	X est le plus petit ensemble vefifiant (B) et (I).
+
+	De facon plus formelle:
+Definition: Soit E un ensemble. Une definition infuctive d'une partie X de E consiste en la donnee:
+	-d'un sous-ensemble B de E
+	-d'un sensemblel K d'operation \phi. E^{a(\phi)} -> E ou' a(\phi) est l'arite de \phi
+
+	(B) \subseteq X
+	(I) \forall \phi \in K, \forall x_1, x_2,...,x_{a(\phi)} \in X, \phi(x_1, x_2,...,x_{a(\phi)}) \in X
+
+L'ensemble defini X = \cap Y (t.q. Y \in F) ou F = \{ y \subseteq E, B \subseteq Y et Y verifie (I)\}
+
+Notons qu'en general plusieurs ensembles verifient les coritions (B) et (I)
+
+Ex:
+(B) 0 \in P
+(I) \forall n \in \N, n \in P \rightarrow n+2 \in P
+
+Il existe une inifite d'ensembles verifiant (B) et (I)
+
+\N, \N\setminus\{1\}, \N\setminus\{1,3\},  \N\setminus\{1,3,5\}, ... sont de tels sous-ensembles (ou parties de \N). La partie P definie par (B) et (I) n'est aucune de celles-la' puisqu'il s'agit de l'ensemble des entriers pairs.
+
+On notera aussi:
+(B) \forall x \in B, x \in X
+(I) \forall \phi \in K, x_1, x_2,...,x_{a(\phi)} \in E \rightarrow \phi(x_1, x_2,...,x_{a(\phi)}) \in X.
+
+Ex: la partie X de \N definie inductivement par 
+	(B) 0 \in X
+	(I) n \in X \rightarrow n+1 \in X.
+C'est \N
+
+
+Soit A=\{(,)\}. L'ensemble D \subseteq A^* des parenthesages bien formes apple langage de Dyck est defini inductivement par.
+	(B) \varepsilon \in D
+	(I) u,v \in D \rightarrow (u) \in D et uv \in D
+
+L'ensemble E des expressions entierement parenthesees formees a partir d'identificateurs apparenant a N et des operateurs + et * et de \{(,)\}
+est la partie de (N \cup \{+,*,(,)\})^*
+definie inductivement par:
+	(B) N \subseteq E
+	(I) e,f \in E (e+f) \in E, (e*f) \in E
+
+
+L'ensemble AB des arbres binaires se definit inductivement par c'est la partie de 
+	(A \cup \{\o,<,>,,\})^* ensemble d'etiquette
+definie inductivement par
+	(B) \o \in AB
+	(I) l,r \in AB, a \in A \rightarrow <a,g,d> \in AB
+
+
+Theoreme: Si X est definipar les conditions (B) et (I), tout element de X peut s'obtenir a' partir de la base en appliquent un nombre fini d'etapes infuctives.
+
+Preuve par induction structurelle:
+Le principe d'induction est une generalisation du principe de recurrence sur les entiers concue pour demontrer les proprieres des ensembles definis inductivement.
+La preuve papr induction calque exactement la definition inductive de l'ensemble, c'est pourquoion l'appelle preuve par induction structurelle.
+
+
+Proposition, Soit X un ensemble defini inductivement et soit P(x) un predicat enoncant une propriete sur un element x de X 
+Si les conditions suivants sont verifiees.
+
+(B") P(x) est vraie pour chaque x de B
+(I") P(x_1,X_2,...,x_{a(\phi)}) \rightarrow P(\phi(x_1,x_2,...,x_{a(\phi)}))
+\forall \phi \in k
+alors P(x) est vraie \forall x de X
+
+
+\end{document}

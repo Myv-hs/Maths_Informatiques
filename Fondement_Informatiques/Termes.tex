@@ -1,0 +1,66 @@
+\documentclass{article}
+\begin{document}
+
+Il s'agit d'un exemple tres utile en informatique de definition par induction structurelle.
+
+Definition:
+soit F = \{f_0,...,f_n\} un ensemble de symboles d'operations. A chaque symbole est assosie' une arite' fini a(f) \in \N qui repreente le nombre de ses arguments.
+
+Soit U l'ensemble de tout les suites de symboles appartenant a F\cup \{(,),,\}.
+Soit F, l'ensemble des symboles d'arite' i (les symboles d'arite' 0 sont les constantes).
+
+Definition: L'ensemble T des terms construit sur F est difini inductivement par:
+(B) B=F_0 (symboles des constantes)
+(I) \forall f \in F_n, d'arite' n, \phi(t_1,...,t_n) = f(t_1,...,t_n) \in T
+    \forall t_1,...,t_n \in T
+
+Un terme peut etre represente' sous forme d'un arbre et f(t_1,...,t_n) est alors represente' par
+
+
+Interpretation des termes:
+Soit V  un sensemble quelconque, A chaque element de f de F_0 on associe un element h(f) de V
+A chaque element f de F_i (avec i > 0) on associe une application h_\phi : V' -> V
+(h_\phi(v_1,v_2,...v_i) = v, v_1,...,v_i \in V et v \in V)
+
+Prposition: Il existe une et une seue application de h* de T dans V tell que:
+(B') si t \in F_0, h*(t) = h(t)
+(I') si t = f(t_1, t_2,...,t_n), h*(t)=h_f(h*(t_1),...,h*(t_n))
+
+Si t est un terme, l'element h*(t) de V sera appele' l'interpretation de t par h*
+
+Example: Soit F_0 = \{a\} , F_1=\{s\}, F=F_0 \cup F_1
+T = \{a,s(a),s(s(a))\}
+
+Interpretation basse sur la structure des termes
+Soit E un ensemble quelconque et c \subseteq E difini inductivement par les conditions (B) et (I)
+Le theoreme indiquant que tout element de C peut s'obtenir a partir de la base en applicant un nombre fini d'etapes inductives peut etre affine' en decrivant par un terme la facon dont un element x est obtenu.
+A chaque element b de B on associe un smbole \overline{b} d'arite' 0
+A chaque fonction \phi on associe le symbole de fonction \overline{\phi} d'arite' a(\phi)
+
+Soit T l'ensemble des termes construit avec ces ensembles de symboles. On considere l'interpretation h* T -> E defini par
+-h(\overline{b})=b
+-h_\phi (x_1,x_2,...,x_{a(\phi)}) = \phi(x_1,x_2,...,x_{a(\phi)})
+
+Prposition X = \{h*(t) | t \in T\}
+
+Definitions non ambigues:
+Definition: Une definition inductive d'un ensemble x est dite non ambigue si l'application h* est injective c-a-d que \forall x \in X, \exists! t \in T, x = h*(t)
+Tout element de X est l'interpretation d'un et un seul terme.
+Plus intuitivement, cela signifie qu'il n'existe qu'une seul facon de construire un element x de X.
+
+Example: la difinition suivant des \N^2 est ambigue:
+(B) (0,0) \in \N^2
+(I_1) (n,m) \in \N^2 \rightarrow (n+1,m) \in \N^2 f
+(I_2) (n,m) \in \N^2 \rightarrow (n,m+1) \in \N^2 q
+
+En effet le couple (1,1) peut etre obtenu de la base an applicant I_1 puis I_2, ou l'inverse.
+
+
+Plus formelement, on considere les termes formes a partir:
+- du symbole \overline{b} d'arite' 0 dont l'interpretation est h(\overline{b}) = (0,0)
+- des symboles unaires \overline{f} et \overline{q} dont les interpretations soit donnes par 
+h_{\overline{f}}(n,m) = (n+1,m), h_{\overline{q}}(n,m) = (n,m+1),
+
+On a (1,1) = h*(\overline{f}(\overline{q}(\overline{b}))) = h*(\overline{q}(\overline{f}(\overline{b})))
+
+\end{document}
