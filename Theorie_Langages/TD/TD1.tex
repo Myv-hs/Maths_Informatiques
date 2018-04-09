@@ -1,0 +1,70 @@
+\documentclass{article}
+\title{Operations sur les langages}
+
+\begin{document}
+
+\maketitle
+
+$\sum = \{a,b,c\} $ \\ 
+L = ab, aaa, ca, bba, $\varepsilon$\\
+$L^* = \{caba, bababa, \varepsilon, ba,...\} $\\
+
+$\sum^* = \{\varepsilon, a,b,aa,ab,ba,bb,...\} $\\
+
+$\omega =  u.v$\\
+u est un prefixe de $\omega$, v est un suffixe de $\omega$\\
+$\omega =  u.v.y$ y est une sous-chaine de $\omega$
+
+$ a = \varepsilon.a = a.\varepsilon $\\
+
+
+
+\section{ }
+le mot ababc
+prefixes = P = \{$\varepsilon$,a,ab,aba,abab,ababc\} \\
+suffixes = S = \{$\varepsilon$,c,bc,abc,babc,ababc\} \\
+sous-chaines = $P \cup S \cup$\{b,ba,bab\}
+
+
+\section{ }
+$(ab)^4 = abababab$ contiens (aba) * 3\\
+$|(ab)^4|_{aba} = 3$
+
+
+\section{ }
+$|\omega^{i+j}| = |\omega^{i}|+|\omega^{j}|$ ?\\
+$\omega^{i+j} = wwwww... =(i+j)|\omega|$\\
+$\omega^{i} = www... =i*|\omega|$\\
+$\omega^{j} =j*|\omega|$\\
+$|\omega^{i+j}| = (i+j)*|\omega|$
+
+\section{ }
+$\exists x \in \{a,b\}^* \mid ax=xb $ ?\\
+On suppose $ax=xb$ donc\\ 
+$|ax|_a == |xb|_a$\\
+$|a|_a + |x|_a = |x|_a + |b|_a  $\\
+1+0=0+0 qui est faux \\
+donc $\not\exists x \in \{a,b\}^* \mid ax=xb $
+
+\section{ }
+1:$A\cup B = \{a,ab,bb,\varepsilon, b, aa\} $\\
+1:$A.B = \{a,ab,aaa,abb,abaa,bb,bbb,bbaa\}$\\
+\\
+2:$A\cup B = \{\varepsilon, b, aba\} $\\
+2:$A.B = \{b,aba\} = B$\\
+\\
+3:$A\cup B = \sum^*$\\
+3:$A.B = \{ax, |x|\geq 1\} \cup \{bax\}, x\in \sum^* $\\
+= ensemble des mots de longeurs au moins 2, ne debutant pas par bb\\
+\\
+4:$A\cup B = \sum^*$\\
+4:$A.B = \sum^*$\\
+\\
+5:$A\cup B = \sum^+$\\
+5:$A.B = \{ax, |x|\geq 2\} \cup \{bax\}, x\in \sum^+ $\\
+= ensemble des mots de longeur au moins 3 ne debutant pas par bb\\
+\\
+6:$A\cup B = \sum^*$\\
+6:$A.B = \sum^+ $\\
+\\
+\end{document}
