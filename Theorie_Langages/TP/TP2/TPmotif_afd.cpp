@@ -21,6 +21,17 @@ struct T_afd  { // automate
 /* création de l'AFD					                       */
 /***************************************************************/
 
+/*
+babab, i=3, k=4, b
+
+bab babab[0::3-1]
+
+babab babab[00::4-1]b
+
+babab
+babab
+*/
+
 /*** fonctions à écrire ***/
 bool suffixe(sti::string motif,int i, int k, char x){
 // retourne true si motif[0..i-1] est suffixe de motif[0..k-1]x
@@ -44,14 +55,15 @@ int min (int a, int b){
 int delta(std::string motif,int k,char x) { 
 // retourne l'état obtenu en partant de k et en lisant x
 	int i  = min(k+1,motif.size());
+
 	while (!suffixe(motif,i,k,x)) {
 		i--;
 	}
 	return i;
 }
 
-void creer_AFD(std::string motif, T_afd & autom)
-{ // création d'un AFD pour sigma*motif
+void creer_AFD(std::string motif, T_afd & autom) { 
+  // création d'un AFD pour sigma*motif
   // retourne le nb de comparaisons effectuées pour créer matrice de transition
 	int i,j, m,n;
 	//alphabet : on y met explicitement les lettres du motif, les autres provoquent des transitions vers l'état initial 0
@@ -86,7 +98,7 @@ void creer_AFD(std::string motif, T_afd & autom)
 }
 
 /***************************************************************/
-/* recherche du motif en utilisant l'AFD		       */
+/* recherche du motif en utilisant l'AFD		               */
 /***************************************************************/
 
 
@@ -101,10 +113,24 @@ int indice_car(char c, std::string alpha)
 
 
 /*** fonction à écrire ***/
-int recherche_afd(int noligne,std::string texte,T_afd autom){ 
+int recherche_afd(int noligne,std::string texte,T_afd autom) { 
 // on recherche toutes les occurrences du motif dans 'texte' grace à l'afd
 // retourne le nombre de "comparaisons" = longueur du texte
-	
+	int out;
+	int etat = 0;
+	int idx;
+	for(int i=0;i<text.length();i++){
+		if(autom.acceptant[etat]) {
+			std::cout << "Motif trouve sur la ligne "<<noligne<<" en position "<<<<std::endl;
+		}
+		out++;
+		idx = indice_car(text[i],autom.alpha);
+		if(idx>=0){
+			etat = autom.trans[etat][idx];
+		} else etat = 0;
+	}
+
+	return out;
 }
 
 
