@@ -1,0 +1,57 @@
+Exo01
+G = (\{a,b\},\{S\},S,P)
+P = \{
+	S -> SbS | a
+\}
+
+S => SbS => abSbS => ababa
+	 \  \
+	  \ SbS
+	   a
+
+Exo02
+G_1 = (\{a\},\{A\},A,P_1)
+P_1 = \{
+	A -> aaaA | aa
+\}
+a) A => aaaA => aaaaaaA => aaaaaaaa
+
+G_2 = (\{a,b\},\{S,T\},S,P_2)
+P_2 = \{
+	S -> bS | aT | \varepsilon
+	T -> bT | bS | \varepsilon
+\}
+b) abbre TD7exo2.png
+
+
+Exo03
+\sigma = \{x,y,z\}
+x*z=
+A -> y | xA
+
+(x|y|z)*=
+S -> xS | yS | zS | \varepsilon
+
+(x|y|z)^+=
+S -> xT | yT | zT
+T -> xT | yT | zT | \varepsilon
+ou
+S -> xS | yS | zS | x | y | z
+
+z(xyx)*z=
+S -> zTz
+T -> xyxT | \varepsilon
+
+
+Exo04
+\sigma = \{0,1\}
+a)	S -> 0S | 1S | 1
+
+b)	S -> 0S | 1S | S0 | 1
+
+c)	S -> 0T | 0
+	T -> 1S | 1
+
+d)	S -> 11S | 1S1 | S0 | 0S | \varepsilon
+
+e)	

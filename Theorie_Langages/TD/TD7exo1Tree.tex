@@ -1,0 +1,34 @@
+{"LFTsep":"4pt","LFTwidth":"15ex","arabic":"amiri","centerlabels":0,"cjk":"noto_sc","font":"noto_sans","greek":"noop","hebrew":"noto_hebrew","levelsep":"2cm","ligatures_hist":0,"ligatures_rare":0,"linewidth":"0.3pt","orient":"D","style":"nonflat","syriac":"syriac_estrangela","tree":"S\r\n-S\r\n--S\r\n---a\r\n--b\r\n--S\r\n---a\r\n-b\r\n-S\r\n--a","treesep":"4ex"}
+
+\documentclass{article}
+\usepackage[active,tightpage,xetex]{preview}
+\usepackage[tuenc]{fontspec}
+\usepackage{varwidth,pst-tree,realscripts}
+\usepackage{bidi}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Noto Sans}
+\pagestyle{empty}
+\psset{showbbox=false,treemode=D,linewidth=0.3pt,treesep=4ex,levelsep=2cm}
+\newcommand{\LFTw}[2]{%
+\Tr[ref=#1]{\psframebox[linestyle=none,framesep=4pt]{%
+\begin{varwidth}{15ex}\center #2\end{varwidth}}}}
+\newcommand{\LFTr}[2]{\Tr[ref=#1]{\psframebox[linestyle=none,framesep=4pt]{#2}}}
+
+\def\pstreehooki{\psset{thislevelsep=*0pt}}
+\def\pstreehookiii{\psset{thislevelsep=*0pt}}
+\def\pstreehookv{\psset{thislevelsep=*0pt}}
+
+\begin{document}\begin{preview}
+\small
+\psframebox[linestyle=none,framesep=10pt]{%
+\pstree{\LFTw{t}{\fontspec{Noto Sans}[Script=Latin]S}}{\pstree{\Tp[edge=none]}{%
+  \pstree{\LFTw{t}{\fontspec{Noto Sans}[Script=Latin]S}}{\pstree{\Tp[edge=none]}{%
+    \pstree{\LFTw{t}{\fontspec{Noto Sans}[Script=Latin]S}}{\pstree{\Tp[edge=none]}{%
+      \LFTw{t}{\fontspec{Noto Sans}[Script=Latin]a}}}
+    \LFTw{t}{\fontspec{Noto Sans}[Script=Latin]b}
+    \pstree{\LFTw{t}{\fontspec{Noto Sans}[Script=Latin]S}}{\pstree{\Tp[edge=none]}{%
+      \LFTw{t}{\fontspec{Noto Sans}[Script=Latin]a}}}}}
+  \LFTw{t}{\fontspec{Noto Sans}[Script=Latin]b}
+  \pstree{\LFTw{t}{\fontspec{Noto Sans}[Script=Latin]S}}{\pstree{\Tp[edge=none]}{%
+    \LFTw{t}{\fontspec{Noto Sans}[Script=Latin]a}}}}}}
+\end{preview}\end{document}

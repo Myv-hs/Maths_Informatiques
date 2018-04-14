@@ -1,0 +1,81 @@
+<x> -> <x>NUM | ALPHA<x> | _<x>
+
+G_1 = (\{a,...,z,0,...,9,_\}, \{<ident>,..\}, <ident> ,P_1)
+P_1 = \{
+	<ident> -> <lettre><suiteCL>
+	<suiteCL> -> <lettre><suiteCL> | <chiffre><suiteCL> | \varepsilon
+	<lettre> -> a | b | c |...| z | _
+	<chiffre> -> 0 | 1 |...| 9 
+\}
+x2_ <ident> \rightarrow <lettre><suiteCL> \rightarrow x<suiteCL> \rightarrow x<chiffre><suiteCL> \rightarrow...
+
+G_2 = (\{a,b\}, \{S,..\}, S ,P_2)
+P_2 = \{
+	S -> AB
+	A -> aA | \varepsilon
+	B -> bB | \varepsilon
+\}
+P_2_opti = \{
+	S -> aS | B
+	B -> bB | \varepsilon
+\}
+
+G_3 = (\{a,b\}, \{S,..\}, S ,P_3)
+P_3 = \{
+	S -> A | B
+	A -> aA | \varepsilon
+	B -> bB | \varepsilon
+\}
+
+G_4 = (\{a,b\}, \{S,..\}, S ,P_4)
+P_4 = \{
+	S -> A | B
+	A -> aA | \varepsilon
+	B -> bB | \varepsilon
+\}
+
+G_5 = (\{a,b\}, \{S,..\}, S ,P_5)
+P_5 = \{
+	S -> aSa | bSb | a | b | \varepsilon
+\}
+
+
+G_6 = (\{a,b,c\}, \{S,..\}, S ,P_6)
+P_6 = \{
+	S -> aSc | b
+\}
+
+G_7 = (\{a,b\}, \{S,..\}, S ,P_7)
+P_7 = \{
+	S -> aSbb | \varepsilon
+\}
+
+G_8 = (\{a,b\}, \{S,..\}, S ,P_8)
+P_8 = \{
+	S -> aSb | C
+	C -> Cc  | \varepsilon
+\} faux car il mest les c au milieu, != Lotus
+
+G_8 = (\{a,b\}, \{S,..\}, S ,P_8)
+P_8 = \{
+	S -> TU
+	T -> aTb  | \varepsilon
+	U -> cU  | \varepsilon
+\} prof
+
+G_8 = (\{a,b\}, \{S,..\}, S ,P_8)
+P_8 = \{
+	S -> Sc | T
+	T -> aTb  | \varepsilon
+\} Lotus
+
+G_9 = (\{a,b\}, \{S,..\}, S ,P_9)
+P_9 = \{
+	X -> AXb
+	A -> aA | \varepsilon
+\} Quentin
+
+G_9 = (\{a,b\}, \{S,..\}, S ,P_9)
+P_9 = \{
+	S -> aS | aSb | \varepsilon
+\} prof

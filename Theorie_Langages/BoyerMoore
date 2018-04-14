@@ -1,0 +1,15 @@
+donnees:
+text T de taille n, motif M de taille, alphabet A de taille p
+
+der_occ <- calcul_der_occ(A,p,M,m)
+decalage_bs <- calcul_decalage_bs(M,m)
+i <- 0
+TANT QUE i <= n-m FAIRE
+	k <- m-1
+	TANT QUE k >= 0 ET M[k]=T[i+k] FAIRE
+		k <- k-1
+	SI k < 0 ALORS
+		ECRIRE "motif en position "i
+		i <- i +decal_bs[-1]
+	SINON
+		i <- i + mac(decal_bs[k],k-decal_badchar[i+k])
