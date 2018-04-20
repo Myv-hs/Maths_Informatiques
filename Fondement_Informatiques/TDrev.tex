@@ -1,0 +1,89 @@
+9.2.1
+Avec 4 couleurs, on peux tirer maximum 4 cartes de couleurs differentes. Un de plus (5 cartes) garentissent que 2 sont de meme couleur. Similairement, 8 cartes et le maximum de cartes tiré avec 2 cartes de chaque couleur, une de plus obligerais a avoir 3 carte de meme couleur.
+
+9.2.2
+Avent de tirer 3 coeurs on pourrais tirer tout les treffles, piques, et carreaux, sois 39 cartes, avent de tirer le premier coeur. Pour s'assurer d'avoir 3 coeurs on dois tirer 42 cartes.
+
+
+
+9.3
+E=\{0,1\}
+E^2= \{(0,0),(0,1),(1,0),(1,1)\}
+
+= 	(0,0),(1,1) symetrique, reflexive, transitive
+!=	(0,1),(1,0) symetrique, reflexive
+<	(0,1) transitif
+>	(1,0) transitif
+!<	(1,0) transitif
+!>	(0,1) transitif
+<=	(0,0),(0,1),(1,1) anti-symetrique, reflexive, transitive
+>=	(0,0),(1,0),(1,1) anti-symetrique, reflexive, transitive
+
+
+9.4
+
+
+9.5
+
+
+
+
+10.1.1
+(0,1) , (2,1) , (6,1), (6,7), (2,3), (4,1)
+
+10.1.2
+
+(B) (0,1) \in S 
+	a=0 pair, b=1 impair
+
+(I) (a,b) \in S \rightarrow (a+2,b) \in S 
+	a+2 et b conserve la parite' de a et b
+
+(I) (a,b) \in S \rightarrow (2(a+b),b) \in
+	2(a+b) force a devenir pair
+
+(I) (a,b) \in S \rightarrow (a,ab+b)
+	si a est pair et b est impair ab+b est impair,
+	c'est le cas de a et b dans le cas de base,
+	et toutes les inductions concervent cette parite'
+	alors celle ci la concervera aussi
+
+	a est toujours pair 2n, b est toujours impair 2n+1 \rightarrow \forall(a,b) \in S (a+b) est impair
+
+10.2
+\{(a,a),(b,b),(c,c),(d,d),(c,a),(a,d),(b,c),(b,d),(b,a)\}
+Reflexive
+Trichotomique
+Bien-fonde'
+
+
+10.3
+E=\{a,b,c,d,e,f,g\}
+
+10.3.1
+
+b-f
+ \
+  d
+   \
+  c-g
+ /
+a-e
+
+10.3.2
+
+10.3.3
+\o
+
+
+10.5
+|E| = n
+|P(E)| = 2^n
+
+|E \setminus A| = n-p
+|P(E \setminus A)| = 2^{n-p} le nombres de parties de E sans aucun element de A
+
+Il y a p singleton dans A.
+
+Toutes les parties de E qui ne continnent qu'un seul element de P et le resultat du produit cartesiens, de tout les parties de (E-A) et de tout les elements de A.
+Et il y en a p2^{n-p}
